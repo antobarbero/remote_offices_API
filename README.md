@@ -1,7 +1,7 @@
-# Movies API #
+# Remote offices API #
 
 ### Clonation of repository ###
-$ git clone https://github.com/antobarbero/movies_API.git
+$ git clone https://github.com/antobarbero/remote_offices_API.git
 
 ________________________________________________________________________
 
@@ -49,7 +49,7 @@ $ pip install -r requirements.txt
 4. Run the database migrations
 
 ```
-$ ./movies_API/manage.py migrate
+$ ./offices_API/manage.py migrate
 ```
 
 ________________________________________________________________________
@@ -64,16 +64,10 @@ ________________________________________________________________________
 ### Run the server ###
 
 ```
-$ ./movies_API/manage.py runserver
+$ ./offices_API/manage.py runserver
 ```
 ________________________________________________________________________
 
-
-### Login at: ###
-
-http://127.0.0.1:8000/api-auth/login/
-
-________________________________________________________________________
 
 ### API documentation at home ###
 
@@ -83,7 +77,7 @@ ________________________________________________________________________
 
 ### How to run tests ###
 ```
-$ ./movies_API/manage.py test movies_API
+$ ./offices_API/manage.py test offices_API
 ```
 
 ________________________________________________________________________
@@ -92,6 +86,3 @@ ________________________________________________________________________
 
 * Django==2.0.4
 * djangorestframework==3.8.2
-* coreapi==2.3.3
-* flake8==3.5.0
-* isort==4.3.4
