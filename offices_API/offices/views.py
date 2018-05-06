@@ -1,3 +1,10 @@
-from django.shortcuts import render
+from rest_framework.viewsets import ModelViewSet
 
-# Create your views here.
+from .models import Office
+from .serializers import OfficeSerializer
+
+
+class OfficeViewSet(ModelViewSet):
+    """Set of views for office objects."""
+    queryset = Office.objects.all()
+    serializer_class = OfficeSerializer
