@@ -84,5 +84,5 @@ ________________________________________________________________________
 
 ### Used libraries and frameworks ###
 
-* Django==2.0.4
+* Django==2.0.5
 * djangorestframework==3.8.2
