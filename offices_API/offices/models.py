@@ -1,4 +1,3 @@
-from django.contrib.gis.db.models import PointField
 from django.db import models
 from django.utils import timezone
 from django.utils.translation import ugettext as _
@@ -20,7 +19,7 @@ class InternetSpeedTest(models.Model):
 class Office(models.Model):
     """Represents a working office."""
 
-    adsl, satellite, i4g, i5g, i3g, air = range(5)
+    adsl, satellite, i3g, i4g, i5g, air = range(6)
 
     CONNECTION_TYPE_CHOICES = (
         (adsl, 'ADSL'),
@@ -33,17 +32,25 @@ class Office(models.Model):
 
     title = models.CharField(max_length=200)
     summary = models.TextField()
-    geo_coords = PointField(
+    #  TODO pass this to PointField
+    latitude = models.DecimalField(
+        max_digits=9,
+        decimal_places=6,
         null=True,
         blank=True,
-        verbose_name=_('Location')
+    )
+    longitude = models.DecimalField(
+        max_digits=9,
+        decimal_places=6,
+        null=True,
+        blank=True,
     )
     features = models.ManyToManyField(OfficeFeature, related_name='offices')
     internet_speed_tests = models.ManyToManyField(
         InternetSpeedTest,
         related_name='offices'
     )
-    internet_connection_type = models.CharField(
+    internet_connection_type = models.SmallIntegerField(
         choices=CONNECTION_TYPE_CHOICES
     )
 
